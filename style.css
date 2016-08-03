@@ -1,0 +1,9 @@
+body {
+	display:flex;
+}
+
+#recInput {
+	height:50%;
+	width:90%;
+	margin:auto;
+}
