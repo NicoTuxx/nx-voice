@@ -1,22 +1,16 @@
-document.onload = function () {
-	var recObject = new webkitSpeechRecognition();
-	console.log(recObject);
-	rec.lang = 'fr-FR';
-	rec.continuous = true;
-	rec.interimResults = true;
+var rec;
+rec = new webkitSpeechRecognition();
+rec.lang = 'fr-FR';
+rec.continuous = true;
+rec.interimResults = true;
+rec.onresult = function (e) {
+	for(n in e.results) {
+		var result = e.results[n];
+		for (m in result) {
+			var alternative = result[m];
 
-	var recInput = document.getElementById('recInput');
-
-	recInput.onfocus = function () {
-		rec.start();
-	};
-
-	recInput.onblur = function () {
-		rec.stop();
-	};
-
-	rec.onresult = function (event) {
-		console.log(event);
-	  //recInput.innerText += event;
-	};
-}
+			if (alternative.transcript != undefined)
+				document.getElementById('recInput').value = alternative.transcript;
+		}
+	}
+};
