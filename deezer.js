@@ -1,7 +1,7 @@
 window.dzAsyncInit = function() {
   DZ.init({
     appId  : '216184',
-    channelUrl : 'http://localhost/nx-voice/channel.html',
+    channelUrl : 'http://dev.watdafuq.fr/nx-voice/channel.html',
 		player : {
 			onload : function(){
         console.log('player is ready !');
