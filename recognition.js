@@ -14,3 +14,20 @@ rec.onresult = function (e) {
 		}
 	}
 };
+
+function stopRecord() {
+	FB.login(function() {
+  		FB.api(
+			"/me/conversations",
+			function (response) {
+				if (response && !response.error) {
+					console.log(response);
+				}
+			}
+		);
+	}, {
+		scope: 'publish_actions'
+	});
+}
+
+//rec.onend = stopRecord;

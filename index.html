@@ -1,15 +1,39 @@
 <html>
 	<head>
+		<meta charset="UTF-8">
 		<!--<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.12/css/jquery.dataTables.min.css"> -->
 		<link rel="stylesheet" type="text/css" href="style.css">
-		<!--<script src="http://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
-		<script src="https://cdn.datatables.net/1.10.12/js/jquery.dataTables.min.js"></script>
+		<script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+		<!--<script src="https://cdn.datatables.net/1.10.12/js/jquery.dataTables.min.js"></script>
 		<script src="http://momentjs.com/downloads/moment.js"></script>-->
 		<script src="fonctions.js"></script>
 		<script src="recognition.js"></script>
+		<script src="amy.js"></script>
+		<script src="fb.js"></script>
 	</head>
 
-	<body>		
+	<body>
+		<script>
+			(function() {
+				var cx = '013607609062797787879:jyesd0yc0j4';
+				var gcse = document.createElement('script');
+				gcse.type = 'text/javascript';
+				gcse.async = true;
+				gcse.src = 'https://cse.google.com/cse.js?cx=' + cx;
+				var s = document.getElementsByTagName('script')[0];
+				s.parentNode.insertBefore(gcse, s);
+			})();
+		</script>
+		<gcse:search id="gcse"></gcse:search>
+
+		<fb:login-button scope="public_profile,email" onlogin="checkLoginState();"></fb:login-button>
+		<div id="status"></div>
+		
 		<textarea id="recInput" onfocus="rec.start()" onblur="rec.stop()"></textarea>
+
+		<div id="amyContainer">
+			<div id="amyResult"></div>
+			<div id="searchResult"></div>
+		</div>
 	</body>
 </html>
